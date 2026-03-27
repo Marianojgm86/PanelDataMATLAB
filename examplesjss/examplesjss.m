@@ -4,7 +4,8 @@ clc
 % -----------------------
 % BASIC PANEL DATA MODELS
 % -----------------------
-
+% addpath paneldata
+addpath(genpath('../paneldata'))
 % Load data
 load('MunnellData')
 

@@ -1,7 +1,14 @@
+
 clear all
 clc
 
+% addpath paneldata
+addpath(genpath('../paneldata'))
+
 % Example with Munnell (1990) data
+% n = 48, T=17, N=816
+% 1970 - 1986 16 years
+
 disp('-----------------------------------------');
 disp('            PANEL DATA MODELS            ');
 disp('-----------------------------------------');
@@ -27,19 +34,19 @@ regolsc.ynames = ynames;
 regolsc.xnames = xnames;
 estdisp(regolsc);
 
-% Panel FE
+% Panel FE For a fixed effects (within) estimation
 regfe = panel(id,year,y, X, 'fe');
 regfe.ynames = ynames;
 regfe.xnames = xnames;
 estdisp(regfe);
 
-% Panel BE
+% Panel BE  For a between estimation.
 regbe = panel(id,year,y, X, 'be');
 regbe.ynames = ynames;
 regbe.xnames = xnames;
 estdisp(regbe);
 
-% Panel RE
+% Panel RE  For a random effects GLS estimation
 regre = panel(id,year,y, X, 're');
 regre.ynames = ynames;
 regre.xnames = xnames;

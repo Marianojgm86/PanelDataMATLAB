@@ -1,5 +1,7 @@
 clear all
 clc
+% addpath paneldata
+addpath(genpath('../paneldata'))
 
 % Example with Unbalanced Munnell (1990) data
 disp('-----------------------------------------');

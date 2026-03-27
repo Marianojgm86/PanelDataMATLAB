@@ -1,7 +1,11 @@
 % Example with Cigar data. Baltagi and Levin (1992) and Baltagi, Griffin and Xiong (2000)
+
+% n = 46 estados T=29 anos, 1964-1992 N= 46*29 = 1334
+
 clear all
 clc
-
+% addpath paneldata
+addpath(genpath('../paneldata'))
 % Load data
 load('..\data\CigarData.mat')
 
@@ -17,7 +21,7 @@ regfe = panel(state, year, y, X, 'fe');
 regfe.ynames = ynames;
 regfe.xnames = xnames;
 estdisp(regfe);
-
+return
 % IV Panel FE
 regivfe = ivpanel(state, year, y, X, Z, 'fe', 'endog', 1);
 regivfe.ynames = ynames;

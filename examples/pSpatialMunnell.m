@@ -1,7 +1,8 @@
 % Example with Munnell (1990) data. Spatial
 clear
 clc
-
+% addpath paneldata
+addpath(genpath('../paneldata'))
 % Load data
 load('..\data\MunnellData.mat')
 
